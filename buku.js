@@ -20,7 +20,6 @@ function Buku(db){
         let data = req.body;
         db.query("INSERT into tb_buku(judul,penulis, tahun) VALUES ('" + data.judul + "','" + data.penulis+ "','"+ data.tahun +"')", (err,results) => {
           if (err) throw err;
-
           res.redirect('/buku')
         })
     }
