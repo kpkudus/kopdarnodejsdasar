@@ -1,6 +1,6 @@
 extends ../layout/application
 block content
-  form
+  form(action="/buku" method="POST")
     div
       label Judul
       input(type="text" name="judul")
@@ -13,3 +13,5 @@ block content
         - for (i=1998; i<2018;i++){
           option(value=i)= i
         - }
+    div
+      button(type="submit") Simpan

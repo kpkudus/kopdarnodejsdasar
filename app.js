@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const stylus = require('stylus');
 const mysql = require('mysql');
-
+const bodyParser = require('body-parser');
 
 var PORT = process.env.PORT || 8000;
 const route = require('./route');
@@ -22,6 +22,7 @@ const connection = mysql.createConnection({
 })
 connection.connect()
 
+app.use(bodyParser.urlencoded({ extended: false }));
 //impor buku
 const Buku = require('./buku');
 //buat instance buku (gunakan)
@@ -36,7 +37,10 @@ app.use(stylus.middleware({
 app.use(express.static('./assets'))
 
 app.get('/buku',buku.index)
-.get('/buku/new',buku.add)
+  .get('/buku/new',buku.add)
+  .post('/buku',buku.create)
+
 app.listen(8000, () => {
   console.log("Aplikasi berjalan tadaaaa")
+
 })
