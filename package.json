@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"express": "^4.14.1",
+		"mysql": "^2.13.0",
 		"pug": "^0.1.0",
 		"stylus": "^0.54.5"
 	}
