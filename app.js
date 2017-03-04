@@ -36,6 +36,7 @@ app.use(stylus.middleware({
 app.use(express.static('./assets'))
 
 app.get('/buku',buku.index)
+.get('/buku/new',buku.add)
 app.listen(8000, () => {
   console.log("Aplikasi berjalan tadaaaa")
 })

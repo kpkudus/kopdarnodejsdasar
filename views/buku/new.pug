@@ -1,0 +1,15 @@
+extends ../layout/application
+block content
+  form
+    div
+      label Judul
+      input(type="text" name="judul")
+    div
+      label Penulis
+      input(type="text" name="penulis")
+    div
+      label Tahun
+      select(name="tahun")
+        - for (i=1998; i<2018;i++){
+          option(value=i)= i
+        - }
